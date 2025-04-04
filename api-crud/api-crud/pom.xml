@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- Versão do modelo do POM -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Definindo o projeto pai, que contém as configurações padrão do Spring Boot -->
+	<parent>
+		<groupId>org.springframework.boot</groupId> <!-- Grupo do Spring Boot -->
+		<artifactId>spring-boot-starter-parent</artifactId> <!-- Artefato para iniciar o projeto -->
+		<version>3.4.3</version> <!-- Versão do Spring Boot -->
+		<relativePath/> <!-- Caminho relativo para o POM pai -->
+	</parent>
+
+	<!-- Informações do projeto -->
+	<groupId>com.example</groupId> <!-- Identificador do grupo do projeto -->
+	<artifactId>api-crud</artifactId> <!-- Nome do artefato (arquivo JAR gerado) -->
+	<version>0.0.1-SNAPSHOT</version> <!-- Versão do artefato -->
+	<name>api-crud</name> <!-- Nome do projeto -->
+	<description>Demo project for Spring Boot</description> <!-- Descrição do projeto -->
+
+	<!-- Definindo a versão do Java -->
+	<properties>
+		<java.version>23</java.version> <!-- Usando Java 23 no projeto -->
+	</properties>
+
+	<!-- Dependências do projeto -->
+	<dependencies>
+
+		<!-- Spring Boot Starter Data JPA: Permite integração com bancos de dados utilizando JPA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Starter Web: Permite construir uma aplicação web e APIs RESTful -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Spring Boot DevTools: Ferramentas para desenvolvimento, como reinicialização automática -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope> <!-- Somente para execução, não para compilação -->
+			<optional>true</optional> <!-- Dependência opcional para ambientes de desenvolvimento -->
+		</dependency>
+
+		<!-- MySQL Connector: Necessário para integrar com um banco de dados MySQL -->
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope> <!-- Somente para execução -->
+		</dependency>
+
+		<!-- Spring Boot Starter Test: Inclui as dependências para testes unitários e de integração -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope> <!-- Somente para testes -->
+		</dependency>
+
+		<!-- Spring Boot Starter Validation: Fornece suporte a validação de dados com anotações -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<!-- Configuração dos plugins do Maven -->
+	<build>
+		<plugins>
+
+			<!-- Plugin do Spring Boot para empacotar e executar a aplicação -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId> <!-- Permite empacotar e rodar a aplicação -->
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
